@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sanket-app
+  name: flask-app
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: sanket-app
+      app: flask-app
   template:
     metadata:
       labels:
-        app: sanket-app
+        app: flask-app   # 🔥 MUST MATCH
     spec:
       containers:
-      - name: sanket-app
+      - name: flask-app
         image: sanketamte123/sanket-app:v1
         ports:
         - containerPort: 3000
